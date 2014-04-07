@@ -99,6 +99,7 @@ var MapsLib = {
     if ( $("#cbType2").is(':checked')) tempWhereClause.push("Alternative");
     if ( $("#cbType3").is(':checked')) tempWhereClause.push("District");
     if ( $("#cbType4").is(':checked')) tempWhereClause.push("Special Education");
+    if ( $("#cbType5").is(':checked')) tempWhereClause.push("Contract");
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
