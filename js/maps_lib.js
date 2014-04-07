@@ -23,7 +23,7 @@ var MapsLib = {
 
   //MODIFY the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1uAKbe1PhZBqd2pcMjm4Qa8FogeK0phNl9L5hUlI",
+  fusionTableId:      "1RfgzKouAb5A0Gy0JdxCvWOhYQNLlCL-Qlu-FEcnR",
 
   //MODIFY Google Fusion Tables API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -32,10 +32,10 @@ var MapsLib = {
   //MODIFY name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
-  locationColumn:     "Address",
+  locationColumn:     "Location",
 
-  map_centroid:       new google.maps.LatLng(41.76619,-72.752895), //MODIFY center that your map defaults to
-  locationScope:      "connecticut",      //MODIFY geographical area appended to all address searches
+  map_centroid:       new google.maps.LatLng(41.850033,-87.6500523), //MODIFY center that your map defaults to
+  locationScope:      "Illinois",      //MODIFY geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
@@ -93,13 +93,12 @@ var MapsLib = {
 
     //---MODIFY column header and values below to match your Google Fusion Table AND index.html
     //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'Program Type'";  // -- note use of single & double quotes for two-word column header
+    var type_column = "'School Type'";  // -- note use of single & double quotes for two-word column header
     var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Preschool");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("Pre-K Programs");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("Home Care");
-    if ( $("#cbType4").is(':checked')) tempWhereClause.push("Elementary");
-    if ( $("#cbType5").is(':checked')) tempWhereClause.push("High School");
+    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Charter");
+    if ( $("#cbType2").is(':checked')) tempWhereClause.push("Alternative");
+    if ( $("#cbType3").is(':checked')) tempWhereClause.push("District");
+    if ( $("#cbType4").is(':checked')) tempWhereClause.push("Special Education");
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
