@@ -23,7 +23,7 @@ var MapsLib = {
 
   //MODIFY the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1RfgzKouAb5A0Gy0JdxCvWOhYQNLlCL-Qlu-FEcnR",
+  fusionTableId:      "1bzXAZyMjb7vXu5SsMaJRWX1eQrjWG3a2JN_vgv28",
 
   //MODIFY Google Fusion Tables API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -99,6 +99,7 @@ var MapsLib = {
     if ( $("#cbType2").is(':checked')) tempWhereClause.push("Alternative");
     if ( $("#cbType3").is(':checked')) tempWhereClause.push("District");
     if ( $("#cbType4").is(':checked')) tempWhereClause.push("Special Education");
+    if ( $("#cbType5").is(':checked')) tempWhereClause.push("Contract");
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
